@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Route;
 
 class ManagementUserController extends Controller
 {
@@ -14,7 +15,7 @@ class ManagementUserController extends Controller
      */
     public function index()
     {
-        //
+        return "Method ini nantinya akan digunakan untuk mengambil semua data user";
     }
 
     /**
@@ -24,7 +25,7 @@ class ManagementUserController extends Controller
      */
     public function create()
     {
-        //
+        return "Method ini nantinya akan digunakan untuk menampilkan from untuk menambah data user";
     }
 
     /**
@@ -35,7 +36,7 @@ class ManagementUserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return "Method ini nantinya akan digunakan untuk menciptakan data user yang baru";
     }
 
     /**
@@ -46,7 +47,7 @@ class ManagementUserController extends Controller
      */
     public function show($id)
     {
-        //
+        return "Method ini nantinya akan digunakan untuk mengambil satu data user id-";
     }
 
     /**
@@ -57,7 +58,7 @@ class ManagementUserController extends Controller
      */
     public function edit($id)
     {
-        //
+        return "Method ini nantinya akan digunakan untuk menampilkan from untuk mengubah data edit dengan id-";
     }
 
     /**
@@ -69,7 +70,7 @@ class ManagementUserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return "Method ini nantinya akan digunakan untuk mengubah data user dengan id-";
     }
 
     /**
@@ -80,6 +81,6 @@ class ManagementUserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return "Method ini nantinya akan menghapus data user dengan id-";
     }
 }
