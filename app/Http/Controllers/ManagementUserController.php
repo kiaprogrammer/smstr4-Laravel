@@ -47,7 +47,7 @@ class ManagementUserController extends Controller
      */
     public function show($id)
     {
-        return "Method ini nantinya akan digunakan untuk mengambil satu data user id-";
+        return "Method ini nantinya akan digunakan untuk mengambil satu data user dengan id-". $id;
     }
 
     /**

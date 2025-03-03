@@ -3,9 +3,23 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ManagementUserController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('users',ManagementUserController::class);
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Route::get('/hello', function () {
+//     return "Hallo, selamat datang di Laravel!";
+// });
+
+// Route::get('/user/{name}',function($name){
+//     return "Halloo, $name";
+// });
+
+// Route::get('/user/{name?}',function ($name = 'Tamu'){
+//     return "Halo, $name!";
+// });
 
 // Route::get('/foo', function(){
 //     return 'Hello World';
@@ -31,8 +45,8 @@ Route::get('/', function () {
 
 // Route::get('/user1', [ManagementUserController::class, 'index']);
 
-Route::resource('/user1', ManagementUserController::class);
+// Route::resource('/user1', ManagementUserController::class);
 
-Route::get('/home', function(){
-    return view('home');
-});
+// Route::get('/home', function(){
+//     return view('home');
+// });
