@@ -2,9 +2,26 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ManagementUserController;
+use App\Http\Controllers\UserController;
 
 Route::resource('users',ManagementUserController::class);
 
+Route::get('/user/{name}',[UserController::class,'show']);
+
+Route::prefix('admin')->group(function(){
+    Route::get('/dashboard', function(){
+        return "Halaman Admin Dashboard";
+    });
+    Route::get('/profile',function(){
+        return "Halaman Admin Profile";
+    });
+});
+
+Route::middleware(['auth'])->group(function(){
+    Route::get('/dashboard', function(){
+        return 'Ini dashboard untuk pengguna yang sudah login';
+    });
+});
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -50,3 +67,7 @@ Route::resource('users',ManagementUserController::class);
 // Route::get('/home', function(){
 //     return view('home');
 // });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
