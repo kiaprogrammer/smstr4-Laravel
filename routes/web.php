@@ -22,6 +22,10 @@ Route::middleware(['auth'])->group(function(){
         return 'Ini dashboard untuk pengguna yang sudah login';
     });
 });
+
+Route::get('/home',function(){
+    return view('home');
+});
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -68,6 +72,6 @@ Route::middleware(['auth'])->group(function(){
 //     return view('home');
 // });
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
