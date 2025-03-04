@@ -23,9 +23,7 @@ Route::middleware(['auth'])->group(function(){
     });
 });
 
-Route::get('/home',function(){
-    return view('home');
-});
+Route::get('/home',[ManagementUserController::class,'index']);
 // Route::get('/', function () {
 //     return view('welcome');
 // });
