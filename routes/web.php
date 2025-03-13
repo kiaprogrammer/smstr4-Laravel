@@ -24,6 +24,10 @@ Route::middleware(['auth'])->group(function(){
 });
 
 Route::get('/home',[ManagementUserController::class,'index']);
+
+Route::group(['namescape' => 'Frontend'], function (){
+    Route::resource('home','HomeController');
+});
 // Route::get('/', function () {
 //     return view('welcome');
 // });
