@@ -37,7 +37,7 @@
 </head>
 
 <body class="index-page">
-  @include('frontend.layouts.navbar')
+  @include('frontend/layouts.navbar')
 
   @yield('content')
 

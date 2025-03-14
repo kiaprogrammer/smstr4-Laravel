@@ -1,33 +1,31 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ManagementUserController;
 use App\Http\Controllers\UserController;
 
+Route::get('/home', [HomeController::class,'index']);
 Route::resource('users',ManagementUserController::class);
 
 Route::get('/user/{name}',[UserController::class,'show']);
 
-Route::prefix('admin')->group(function(){
-    Route::get('/dashboard', function(){
-        return "Halaman Admin Dashboard";
-    });
-    Route::get('/profile',function(){
-        return "Halaman Admin Profile";
-    });
-});
+// Route::prefix('admin')->group(function(){
+//     Route::get('/dashboard', function(){
+//         return "Halaman Admin Dashboard";
+//     });
+//     Route::get('/profile',function(){
+//         return "Halaman Admin Profile";
+//     });
+// });
 
-Route::middleware(['auth'])->group(function(){
-    Route::get('/dashboard', function(){
-        return 'Ini dashboard untuk pengguna yang sudah login';
-    });
-});
+// Route::middleware(['auth'])->group(function(){
+//     Route::get('/dashboard', function(){
+//         return 'Ini dashboard untuk pengguna yang sudah login';
+//     });
+// });
 
-Route::get('/home',[ManagementUserController::class,'index']);
-
-Route::group(['namescape' => 'Frontend'], function (){
-    Route::resource('home','HomeController');
-});
+// Route::get('/home',[ManagementUserController::class,'index']);
 // Route::get('/', function () {
 //     return view('welcome');
 // });
