@@ -157,7 +157,7 @@
         </ul>
     </li><!-- End Charts Nav -->
 
-    li class="nav-item">
+    <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
             <i class="bi bi-gem"></i><span>Icons</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
