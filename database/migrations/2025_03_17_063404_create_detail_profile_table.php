@@ -11,7 +11,7 @@ class CreateDetailProfileTable extends Migration
      *
      * @return void
      */
-    public function up()
+        public function up()
     {
         Schema::create('detail_profile', function (Blueprint $table) {
             $table->id();
