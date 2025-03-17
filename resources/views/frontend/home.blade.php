@@ -1,3 +1,7 @@
+@extends('frontend.layouts.template')
+
+@section('content')
+
 </div>
 </header>
 
