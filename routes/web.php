@@ -1,12 +1,20 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+// use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\ManagementUserController;
 use App\Http\Controllers\UserController;
+use App\Http\Middleware\CheckAge;
 
-Route::get('/home', [HomeController::class,'index'])->name('home');
+Route::get('/', function(){
+})->middleware('first','second');
+
+Route::get('admin/profile', function(){
+})->middleware(CheckAge::class);
+
+Route::get('/home', [HomeController::class, 'index'])->middleware('auth')->name('home');
 
 Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
 
