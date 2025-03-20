@@ -41,21 +41,18 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        $this->validate($request,[
-            'username' => 'required|string',
-            'password' => 'required|string|min:6',
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
         ]);
 
-        $logintype = filter_var($request->username, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
-
-        $login = [
-            $logintype => $request->username,
-            'password' => $request->password
-        ];
-
-        if (auth()->attempt($login)){
-            return redirect()->route('home');
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+            return redirect()->intended('/dashboard');
         }
-        return redirect()->route('login')->with(['error' => 'Email/Password Salah!']);
+
+        return back()->withErrors([
+            'email' => 'Email atau password salah.'
+        ]);
     }
 }
