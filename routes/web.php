@@ -13,7 +13,10 @@ use App\Http\Middleware\CheckAge;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function(){
-})->middleware('first','second');
+    return view('welcome');
+});
+
+Auth::routes();
 
 Route::get('/login', function(){
     return view('auth.login');
